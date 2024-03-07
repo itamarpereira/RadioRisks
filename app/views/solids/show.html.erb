@@ -1,6 +1,6 @@
 <% if @solid.gender == "male" %>
   <h2>Male</h2>
-  <h2>Excesso de Risco Relativo (ERR) = <%= @err_male %></h2>
+  <h2>Excesso de Risco Relativo (ERR) = <%= @err_male.round(2) %></h2>
   <h2>Risco Relativo (RR) = <%= @rr_male %></h2>
   <h2>Probabilidade de Causa(PC) = <%= @pc_male %>%</h2>
   <h1>Lost Life Expectancy Rate</h1>
