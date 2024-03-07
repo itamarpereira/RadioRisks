@@ -1,0 +1,2 @@
+class Leukaemium < ApplicationRecord
+end

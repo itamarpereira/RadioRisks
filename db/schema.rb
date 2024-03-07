@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_07_151241) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_07_151431) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "leukaemia", force: :cascade do |t|
+    t.float "dose"
+    t.integer "exposure"
+    t.integer "diagnostic"
+    t.float "male_expected_age"
+    t.float "female_expected_age"
+    t.float "incidence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "solids", force: :cascade do |t|
     t.string "gender"
