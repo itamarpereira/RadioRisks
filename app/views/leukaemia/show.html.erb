@@ -1,0 +1,9 @@
+<% if @leukaemium.diagnostic - @leukaemium.exposure < 2 %>
+  <h2>O diagnóstico deve ser dado, pelo menos, 2 anos após a exposição</h2>
+<% elsif %>
+  <h2>Número de euler = <%= @exp %></h2>
+  <h2>d = <%= @d %></h2>
+  <h2>Exposição = <%= @e %></h2>
+  <h2>Tempo = <%= @t %>%</h2>
+<% end %>
+<%= link_to 'Back', root_path %>

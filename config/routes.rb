@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :solids, only: [:index, :show, :new, :create, :edit, :update]
+  resources :leukaemia, only: [:index, :show, :new, :create, :edit, :update]
 end

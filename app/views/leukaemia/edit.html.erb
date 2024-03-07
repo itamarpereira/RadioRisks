@@ -1,0 +1,18 @@
+<h1>LLER</h1>
+
+<%= simple_form_for(@leukaemium) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :male_expected_age, label: 'Male Expected Age(years)', error: 'EA(males) is mandatory, please specify one' %>
+    <%= f.input :female_expected_age, label: 'Female Expected Age(years)', error: 'EA(females) is mandatory, please specify one' %>
+    <%= f.input :incidence, label: 'Incidence(cases/100.000)', error: 'Number of cases per 100.000 inhabitants' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', root_path %>
