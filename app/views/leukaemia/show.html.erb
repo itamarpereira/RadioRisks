@@ -1,9 +1,15 @@
 <% if @leukaemium.diagnostic - @leukaemium.exposure < 2 %>
   <h2>O diagnóstico deve ser dado, pelo menos, 2 anos após a exposição</h2>
-<% elsif %>
+<% else %>
+  <h2>Excesso de Risco Relativo (ERR) = <%= @err %></h2>
+  <h2>Risco Relativo (RR) = <%= @rr %></h2>
+  <h2>Probabilidade de Causa(PC) = <%= @pc %></h2>
   <h2>Número de euler = <%= @exp %></h2>
   <h2>d = <%= @d %></h2>
   <h2>Exposição = <%= @e %></h2>
   <h2>Tempo = <%= @t %>%</h2>
 <% end %>
+<h1>Lost Life Expectancy Rate</h1>
+  <p class="btn btn-grad"><%= link_to 'LLER', edit_leukaemium_path(@leukaemium) %></p>
+
 <%= link_to 'Back', root_path %>
