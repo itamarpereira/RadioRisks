@@ -1,5 +1,5 @@
 class SolidsController < ApplicationController
-    before_action :set_solid, only: [:show] # [:edit, :update, :destroy]
+    before_action :set_solid, only: [:show, :edit, :update] # [:destroy]
     before_action :set_solids, only: [:index, :show]
   
     # GET /solids
@@ -16,8 +16,8 @@ class SolidsController < ApplicationController
     end
   
     # GET /solids/1/edit
-    # def edit
-    # end
+    def edit
+    end
   
     # POST /solids
     def create
@@ -31,13 +31,13 @@ class SolidsController < ApplicationController
     end
   
     # PATCH/PUT /solids/1
-    # -def update
-    # -  if @solid.update(solid_params)
-    # -    redirect_to @solid, notice: 'solid was successfully updated.'
-    # -  else
-    # -    render :edit
-    # -  end
-    # -end
+    def update
+     if @solid.update(solid_params)
+       redirect_to @solid, notice: 'solid was successfully updated.'
+     else
+       render :edit
+     end
+    end
   
     # DELETE /solids/1
     # -def destroy
@@ -63,6 +63,6 @@ class SolidsController < ApplicationController
   
     # Only allow a trusted parameter "white list" through.
     def solid_params
-      params.require(:solid).permit(:gender, :dose, :exposure)
+      params.require(:solid).permit(:gender, :dose, :exposure, :male_expected_age, :female_expected_age, :incidence)
     end  
 end
