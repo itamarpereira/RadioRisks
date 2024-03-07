@@ -1,0 +1,14 @@
+<% if @solid.gender == "male" %>
+  <h2>Male</h2>
+  <h2>Excesso de Risco Relativo (ERR) = <%= @err_male %></h2>
+  <h2>Risco Relativo (RR) = <%= @rr_male %></h2>
+  <h2>Probabilidade de Causa(PC) = <%= @pc_male %>%</h2>
+<% elsif %>
+  <h2>Female</h2>
+  <h2>Excesso de Risco Relativo (ERR) = <%= @err_female %></h2>
+  <h2>Risco Relativo (RR) = <%= @rr_female %></h2>
+  <h2>Probabilidade de Causa(PC) = <%= @pc_female %>%</h2>
+<% end %>
+<%= link_to 'Back', solids_path %>
+
+<h1>Lost Life Expectancy Rate</h1>
