@@ -10,6 +10,16 @@
   <h2>Tempo = <%= @t %>%</h2>
 <% end %>
 <h1>Lost Life Expectancy Rate</h1>
-  <p class="btn btn-grad"><%= link_to 'LLER', edit_leukaemium_path(@leukaemium) %></p>
+  <h2>LLE atual para homens  = <%= @lle_male %></h2>
+  <h2>20 anos = <%= @vinte_male %></h2>
+  <h2>30 anos = <%= @trinta_male %></h2>
+  <h2>40 anos = <%= @quarenta_male %></h2>
+  <h2>50 anos = <%= @cinquenta_male %></h2>
+  <h2>LLE Atual para mulheres = <%= @lle_female %></h2>
+  <h2>20 anos = <%= @vinte_female %></h2>
+  <h2>30 anos = <%= @trinta_female %></h2>
+  <h2>40 anos = <%= @quarenta_female %></h2>
+  <h2>50 anos = <%= @cinquenta_female %></h2>
+<p class="btn btn-grad"><%= link_to 'LLER', edit_leukaemium_path(@leukaemium) %></p>
 
 <%= link_to 'Back', root_path %>

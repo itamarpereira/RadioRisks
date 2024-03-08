@@ -4,6 +4,11 @@
   <h2>Risco Relativo (RR) = <%= @rr_male %></h2>
   <h2>Probabilidade de Causa(PC) = <%= @pc_male %>%</h2>
   <h1>Lost Life Expectancy Rate</h1>
+  <h2>LLE Atual = <%= @lle_male %></h2>
+  <h2>20 anos = <%= @vinte_male %></h2>
+  <h2>30 anos = <%= @trinta_male %></h2>
+  <h2>40 anos = <%= @quarenta_male %></h2>
+  <h2>50 anos = <%= @cinquenta_male %></h2> 
   <p class="btn btn-grad"><%= link_to 'LLER', edit_solid_path(@solid) %></p>
   <p><%= "#{@solid.male_expected_age}" %>
 <% elsif %>
@@ -12,7 +17,11 @@
   <h2>Risco Relativo (RR) = <%= @rr_female %></h2>
   <h2>Probabilidade de Causa(PC) = <%= @pc_female %>%</h2>
   <h1>Lost Life Expectancy Rate</h1>
-
-
+  <h2>LLE Atual = <%= @lle_female %></h2>
+  <h2>20 anos = <%= @vinte_female %></h2>
+  <h2>30 anos = <%= @trinta_female %></h2>
+  <h2>40 anos = <%= @quarenta_female %></h2>
+  <h2>50 anos = <%= @cinquenta_female %></h2>
+  <p class="btn btn-grad"><%= link_to 'LLER', edit_solid_path(@solid) %></p>
 <% end %>
 <%= link_to 'Back', root_path %>
