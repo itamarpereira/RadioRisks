@@ -1,25 +1,22 @@
 <% if @leukaemium.diagnostic - @leukaemium.exposure < 2 %>
   <h2>O diagnóstico deve ser dado, pelo menos, 2 anos após a exposição</h2>
 <% else %>
-  <h2>Excesso de Risco Relativo (ERR) = <%= @err %></h2>
+  <h2>Excesso de Risco Relativo (ERR) = <%= @err.round(2) %></h2>
   <h2>Risco Relativo (RR) = <%= @rr %></h2>
-  <h2>Probabilidade de Causa(PC) = <%= @pc %></h2>
-  <h2>Número de euler = <%= @exp %></h2>
-  <h2>d = <%= @d %></h2>
-  <h2>Exposição = <%= @e %></h2>
-  <h2>Tempo = <%= @t %>%</h2>
-<% end %>
-<h1>Lost Life Expectancy Rate</h1>
-  <h2>LLE atual para homens  = <%= @lle_male %></h2>
-  <h2>20 anos = <%= @vinte_male %></h2>
-  <h2>30 anos = <%= @trinta_male %></h2>
-  <h2>40 anos = <%= @quarenta_male %></h2>
-  <h2>50 anos = <%= @cinquenta_male %></h2>
-  <h2>LLE Atual para mulheres = <%= @lle_female %></h2>
-  <h2>20 anos = <%= @vinte_female %></h2>
-  <h2>30 anos = <%= @trinta_female %></h2>
-  <h2>40 anos = <%= @quarenta_female %></h2>
-  <h2>50 anos = <%= @cinquenta_female %></h2>
+  <h2>Probabilidade de Causa(PC) = <%= @pc %>%</h2>
+  <% if @leukaemium.incidence.present?  %>
+    <h1>Lost Life Expectancy Rate</h1>
+    <h2>LLE atual para homens  = <%= @lle_male.round %>dias</h2>
+    <h2>20 anos = <%= @vinte_male.round %>dias</h2>
+    <h2>30 anos = <%= @trinta_male.round %>dias</h2>
+    <h2>40 anos = <%= @quarenta_male.round %>dias</h2>
+    <h2>50 anos = <%= @cinquenta_male.round %>dias</h2>
+    <h2>LLE Atual para mulheres = <%= @lle_female.round %>dias</h2>
+    <h2>20 anos = <%= @vinte_female.round %>dias</h2>
+    <h2>30 anos = <%= @trinta_female.round %>dias</h2>
+    <h2>40 anos = <%= @quarenta_female.round %>dias</h2>
+    <h2>50 anos = <%= @cinquenta_female.round %>dias</h2>
+  <% end %>
 <p class="btn btn-grad"><%= link_to 'LLER', edit_leukaemium_path(@leukaemium) %></p>
-
+<% end %>
 <%= link_to 'Back', root_path %>

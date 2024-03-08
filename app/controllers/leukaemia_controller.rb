@@ -69,17 +69,19 @@ class LeukaemiaController < ApplicationController
       @rr = 1 + @d
     end
     @err = @rr - 1
-    @pc = @err / @rr
-    @lle_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - @leukaemium.diagnostic) / 360
-    @lle_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - @leukaemium.diagnostic) / 360
-    @vinte_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - 20) / 360
-    @trinta_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - 30) / 360
-    @quarenta_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - 40) / 360
-    @cinquenta_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - 50) / 360
-    @vinte_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - 20) / 360
-    @trinta_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - 30) / 360
-    @quarenta_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - 40) / 360
-    @cinquenta_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - 50) / 360
+    @pc = (@err / @rr).round(2) *100
+    if @leukaemium.incidence.present?
+      @lle_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - @leukaemium.diagnostic) / 360
+      @lle_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - @leukaemium.diagnostic) / 360
+      @vinte_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - 20) / 360
+      @trinta_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - 30) / 360
+      @quarenta_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - 40) / 360
+      @cinquenta_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - 50) / 360
+      @vinte_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - 20) / 360
+      @trinta_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - 30) / 360
+      @quarenta_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - 40) / 360
+      @cinquenta_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - 50) / 360
+    end
     #@err_male = (0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 )))
     #@rr_male = 1 + @err_male
     #@pc_male = (@err_male / @rr_male).round(2) *100
