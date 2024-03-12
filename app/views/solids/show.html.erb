@@ -1,30 +1,120 @@
 <% if @solid.gender == "male" %>
   <h2>Male</h2>
   <h2>Excesso de Risco Relativo (ERR) = <%= @err_male.round(2) %></h2>
-  <h2>Risco Relativo (RR) = <%= @rr_male %></h2>
+  <h2>Risco Relativo (RR) = <%= @rr_male.round(2) %></h2>
   <h2>Probabilidade de Causa(PC) = <%= @pc_male %>%</h2>
-  <h1>Lost Life Expectancy Rate</h1>
+  <hr>
+  <h1>Lost Life Expectancy Rate(em dias)</h1>
   <% if @solid.incidence.present?  %>
     <h2>LLE Atual = <%= @lle_male.round %>dias</h2>
-    <h2>20 anos = <%= @vinte_male.round %>dias</h2>
+  <!--  <h2>20 anos = <%= @vinte_male.round %>dias</h2>
     <h2>30 anos = <%= @trinta_male.round %>dias</h2>
     <h2>40 anos = <%= @quarenta_male.round %>dias</h2>
-    <h2>50 anos = <%= @cinquenta_male.round %>dias</h2>
+    <h2>50 anos = <%= @cinquenta_male.round %>dias</h2> -->
+    <div class="container">
+      <div id="projects" class="card-projects">
+        <h1>Males</h1>
+        <div class="cards">
+          <div class="card" >
+            <h4>20 anos</h4>
+            <p><%= @vinte_male.round %></p>
+          </div>
+          <div class="card" >
+            <h4>30 anos</h4>
+            <p><%= @trinta_male.round %></p>
+          </div>
+          <div class="card" >
+            <h4>40 anos</h4>
+            <p><%= @quarenta_male.round %></p>
+          </div>
+          <div class="card" >
+            <h4>50 anos</h4>
+            <p><%= @cinquenta_male.round %></p>
+          </div>
+        </div>
+      </div>
+      <div id="projects" class="card-projects">
+        <h1>Females</h1>
+        <div class="cards">
+          <div class="card" >
+            <h4>20 anos</h4>
+            <p><%= @vinte_female.round %></p>
+          </div>
+          <div class="card" >
+            <h4>30 anos</h4>
+            <p><%= @trinta_female.round %></p>
+          </div>
+          <div class="card" >
+            <h4>40 anos</h4>
+            <p><%= @quarenta_female.round %></p>
+          </div>
+          <div class="card" >
+            <h4>50 anos</h4>
+            <p><%= @cinquenta_female.round %></p>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-  <p class="btn btn-grad"><%= link_to 'LLER', edit_solid_path(@solid) %></p>
+  <%= link_to 'LLER', edit_solid_path(@solid), class: "btn btn-grad" %>
 <% elsif %>
   <h2>Female</h2>
   <h2>Excesso de Risco Relativo (ERR) = <%= @err_female %></h2>
   <h2>Risco Relativo (RR) = <%= @rr_female %></h2>
   <h2>Probabilidade de Causa(PC) = <%= @pc_female %>%</h2>
   <h1>Lost Life Expectancy Rate</h1>
-  <% if @solid.incidence.present?  %>
+  <% if @solid.incidence.present? && @solid.male_expected_age.present? && @solid.female_expected_age.present? %>
     <h2>LLE Atual = <%= @lle_female.round %>dias</h2>
-    <h2>20 anos = <%= @vinte_female.round %>dias</h2>
+  <!--  <h2>20 anos = <%= @vinte_female.round %>dias</h2>
     <h2>30 anos = <%= @trinta_female.round %>dias</h2>
     <h2>40 anos = <%= @quarenta_female.round %>dias</h2>
-    <h2>50 anos = <%= @cinquenta_female.round %>dias</h2>
+    <h2>50 anos = <%= @cinquenta_female.round %>dias</h2> -->
+    <div class="container">
+      <div id="projects" class="card-projects">
+        <h1>Males</h1>
+        <div class="cards">
+          <div class="card" >
+            <h4>20 anos</h4>
+            <p><%= @vinte_male.round %></p>
+          </div>
+          <div class="card" >
+            <h4>30 anos</h4>
+            <p><%= @trinta_male.round %></p>
+          </div>
+          <div class="card" >
+            <h4>40 anos</h4>
+            <p><%= @quarenta_male.round %></p>
+          </div>
+          <div class="card" >
+            <h4>50 anos</h4>
+            <p><%= @cinquenta_male.round %></p>
+          </div>
+        </div>
+      </div>
+      <div id="projects" class="card-projects">
+        <h1>Females</h1>
+        <div class="cards">
+          <div class="card" >
+            <h4>20 anos</h4>
+            <p><%= @vinte_female.round %></p>
+          </div>
+          <div class="card" >
+            <h4>30 anos</h4>
+            <p><%= @trinta_female.round %></p>
+          </div>
+          <div class="card" >
+            <h4>40 anos</h4>
+            <p><%= @quarenta_female.round %></p>
+          </div>
+          <div class="card" >
+            <h4>50 anos</h4>
+            <p><%= @cinquenta_female.round %></p>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-  <p class="btn btn-grad"><%= link_to 'LLER', edit_solid_path(@solid) %></p>
+  <%= link_to 'LLER', edit_solid_path(@solid), class: "btn btn-grad" %>
 <% end %>
-<%= link_to 'Back', root_path %>
+<hr>
+<%= link_to 'Back', root_path, class: "btn btn-blue" %>

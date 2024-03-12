@@ -1,1 +1,127 @@
 // Specific CSS for your home-page
+
+html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  #page-container {
+    position: relative;
+    min-height: 100vh;
+    #content-wrap {
+      padding-bottom: $footer_height;
+    }
+  }
+  
+  .container-learn {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    flex-grow: 1;
+  }
+  
+  @media (max-width: 768px){
+    .container-learn {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 520px){
+    .container-learn {
+      margin-top: 8px;
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+    }
+  }
+  
+  .container-practice {
+    position: relative;
+  }
+  
+  .container-practice a{
+    position: absolute;
+    right: 0;
+    font-size: x-large;
+    color: #171b2d94;
+  }
+  
+  #learn h2{
+    color: #171b2d94;
+    font-size: 35px;
+    text-align: center;
+    padding: 0 20px;
+    margin: 0 0 10px;
+  }
+  
+  @media (max-width: 768px) {
+    #learn h2{
+      font-size: 30px;
+    }
+  }
+  
+  #practice h2{
+    color: #171b2d94;
+    font-size: 35px;
+    text-align: center;
+    padding: 0 20px;
+    margin: 0 0 10px;
+  }
+  
+  @media (max-width: 768px) {
+    #practice h2{
+      font-size: 30px;
+    }
+  }
+  
+  
+  #hired h2{
+    color: #171b2d94;
+    font-size: 35px;
+    text-align: center;
+    padding: 0 20px;
+    margin: 0 0 10px;
+  }
+  
+  @media (max-width: 768px) {
+    #hired h2{
+      font-size: 30px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    #learn h2{
+      font-size: 27px;
+    }
+    #practice h2{
+      font-size: 27px;
+    }
+    #hired h2{
+      font-size: 27px;
+    }
+  }
+  
+  .action-text {
+    margin-top: 10px;
+    height: 500px;
+    background-color: white;
+  }
+  
+  .lecture {
+    overflow: scroll;
+  }
+  
+  .form {
+    height: 45px;
+    width: 1063px;
+  }
+  
+  .white-box {
+    color: grey;
+  }
+  
+  .white-box:hover {
+    color: #D3D3D3;
+  }

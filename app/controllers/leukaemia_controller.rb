@@ -69,8 +69,8 @@ class LeukaemiaController < ApplicationController
       @rr = 1 + @d
     end
     @err = @rr - 1
-    @pc = (@err / @rr).round(2) *100
-    if @leukaemium.incidence.present?
+    @pc = (@err / @rr).round(4) *100
+    if @leukaemium.incidence.present? && @leukaemium.male_expected_age.present? && @leukaemium.female_expected_age.present?
       @lle_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - @leukaemium.diagnostic) / 360
       @lle_female = @err * @leukaemium.incidence * (@leukaemium.female_expected_age - @leukaemium.diagnostic) / 360
       @vinte_male = @err * @leukaemium.incidence * (@leukaemium.male_expected_age - 20) / 360

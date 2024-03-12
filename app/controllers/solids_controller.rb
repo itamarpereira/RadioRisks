@@ -55,11 +55,11 @@ class SolidsController < ApplicationController
     @solid = Solid.find(params[:id])
     @err_male = (0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 )))
     @rr_male = 1 + @err_male
-    @pc_male = (@err_male / @rr_male).round(2) *100
+    @pc_male = (@err_male / @rr_male).round(4) *100
     @err_female = (0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 )))
     @rr_female = 1 + @err_female
-    @pc_female = (@err_female / @rr_female).round(2) *100
-    if @solid.incidence.present?
+    @pc_female = (@err_female / @rr_female).round(4) *100
+    if @solid.incidence.present? && @solid.male_expected_age.present? && @solid.female_expected_age.present?
       @lle_male = @err_male * @solid.incidence * (@solid.male_expected_age - @solid.exposure) / 360
       @lle_female = @err_female * @solid.incidence * (@solid.female_expected_age - @solid.exposure) / 360
       @vinte_male = @err_male * @solid.incidence * (@solid.male_expected_age - 20) / 360
