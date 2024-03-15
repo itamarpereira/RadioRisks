@@ -1,5 +1,5 @@
 class Solid < ApplicationRecord
-  GENDERS = ["male", "female"]
+  GENDERS = ["masculino", "feminino"]
 
   validates :gender, inclusion: { in: GENDERS, message: "%{value} is not a valid gender" }
   validates :dose, inclusion: 0.1..3.99

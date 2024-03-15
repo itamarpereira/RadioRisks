@@ -1,13 +1,13 @@
-<h1>Leukaemia Model</h1>
+<h1>Modelo de Leucemia</h1>
 
 <%= simple_form_for(@leukaemium) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :dose, label: 'Dose(Sv)', error: 'Dose value must be between 0.1 Sv and 3.99 Sv' %>
-    <%= f.input :exposure, label: 'Age at exposure', error: 'Age at exposure is mandatory' %>
-    <%= f.input :diagnostic, label: 'Age at diagnosis', error: 'Age at diagnosis is mandatory' %>
+    <%= f.input :dose, label: 'Dose(Sv): Deve estar entre 0.1 Sv e 3.99 Sv', error: 'Dose value must be between 0.1 Sv and 3.99 Sv' %>
+    <%= f.input :exposure, label: 'Idade(quando houve a exposição)', error: 'Age at exposure is mandatory' %>
+    <%= f.input :diagnostic, label: 'Idade(quando houve o diagnóstico)', error: 'Age at diagnosis is mandatory' %>
   </div>
 
   <div class="btn btn-grad">

@@ -1,13 +1,13 @@
-<h1>Solid Tumour</h1>
+<h1>Modelo de Tumores Sólidos</h1>
 
 <%= simple_form_for(@solid) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :gender, label: 'Gender: male or female', error: 'Gender is mandatory, please specify one' %>
-    <%= f.input :dose, label: 'Dose(Sv)', error: 'Dose value must be between 0.1 Sv and 3.99 Sv' %>
-    <%= f.input :exposure, label: 'Age at exposure', error: 'Age at exposure is mandatory' %>
+    <%= f.input :gender, label: 'Gênero: masculino ou feminino', error: 'Gender is mandatory, please specify one' %>
+    <%= f.input :dose, label: 'Dose(Sv): Deve estar entre 0.1 Sv e 3.99 Sv', error: 'Dose value must be between 0.1 Sv and 3.99 Sv' %>
+    <%= f.input :exposure, label: 'Idade(quando houve a exposição)', error: 'Age at exposure is mandatory' %>
   </div>
 
   <div class="btn btn-grad">
