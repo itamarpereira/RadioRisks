@@ -3,7 +3,7 @@
 <% else %>
   <h2>Excesso de Risco Relativo (ERR) = <%= @err.round(3) %></h2>
   <h2>Risco Relativo (RR) = <%= @rr.round(3) %></h2>
-  <h2>Probabilidade de Causa(PC) = <%= @pc %>%</h2>
+  <h2>Probabilidade de Causa(PC) = <%= @pc.round(2) %>%</h2>
   <hr>
   <h1>Lost Life Expectancy Rate(em dias)</h1>
   <% if @leukaemium.incidence.present? && @leukaemium.male_expected_age.present? && @leukaemium.female_expected_age.present? %>
