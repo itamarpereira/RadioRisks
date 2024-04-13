@@ -5,7 +5,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :gender, label: 'Gênero: masculino ou feminino', error: 'Gender is mandatory, please specify one' %>
+    <%= f.input :gender, label: 'Sexo: masculino ou feminino', error: 'Sex field is mandatory, please specify one' %>
     <%= f.input :dose, label: 'Dose(Sv): Deve estar entre 0.1 Sv e 3.99 Sv', error: 'Dose value must be between 0.1 Sv and 3.99 Sv' %>
     <%= f.input :exposure, label: 'Idade(quando houve a exposição)', error: 'Age at exposure is mandatory' %>
   </div>
