@@ -1,5 +1,5 @@
 <% if @solid.gender == "masculino" %>
-  <h2>Homem</h2>
+  <h2>Indivíduo do sexo masculino</h2>
   <h2>Excesso de Risco Relativo (ERR) = <%= @err_male.round(2) %></h2>
   <h2>Risco Relativo (RR) = <%= @rr_male.round(2) %></h2>
   <h2>Probabilidade de Causa(PC) = <%= @pc_male.round(2) %>%</h2>
@@ -58,12 +58,12 @@
   <% end %>
   <%= link_to 'LLER', edit_solid_path(@solid), class: "btn btn-grad" %>
 <% else %>
-  <h2>Mulher</h2>
+  <h2>Indivíduo do sexo feminino</h2>
   <h2>Excesso de Risco Relativo (ERR) = <%= @err_female.round(2) %></h2>
   <h2>Risco Relativo (RR) = <%= @rr_female.round(2) %></h2>
   <h2>Probabilidade de Causa(PC) = <%= @pc_female.round(2) %>%</h2>
     <hr>
-  <h1>Lost Life Expectancy Rate</h1>
+  <h1>Lost Life Expectancy</h1>
   <% if @solid.incidence.present? && @solid.male_expected_age.present? && @solid.female_expected_age.present? %>
     <h2>LLE Atual = <%= @lle_female.round %>dias</h2>
   <!--  <h2>20 anos = <%= @vinte_female.round %>dias</h2>
@@ -115,7 +115,7 @@
       </div>
     </div>
   <% end %>
-  <%= link_to 'LLER', edit_solid_path(@solid), class: "btn btn-grad" %>
+  <%= link_to 'LLE', edit_solid_path(@solid), class: "btn btn-grad" %>
 <% end %>
 <hr>
 <%= link_to 'Back', root_path, class: "btn btn-blue" %>

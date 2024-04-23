@@ -62,14 +62,14 @@ class SolidsController < ApplicationController
     if @solid.incidence.present? && @solid.male_expected_age.present? && @solid.female_expected_age.present?
       @lle_male = @err_male * @solid.incidence * (@solid.male_expected_age - @solid.exposure) / 360
       @lle_female = @err_female * @solid.incidence * (@solid.female_expected_age - @solid.exposure) / 360
-      @vinte_male = @err_male * @solid.incidence * (@solid.male_expected_age - 20) / 360
-      @trinta_male = @err_male * @solid.incidence * (@solid.male_expected_age - 30) / 360
-      @quarenta_male = @err_male * @solid.incidence * (@solid.male_expected_age - 40) / 360
-      @cinquenta_male = @err_male * @solid.incidence * (@solid.male_expected_age - 50) / 360
-      @vinte_female = @err_female * @solid.incidence * (@solid.female_expected_age - 20) / 360
-      @trinta_female = @err_female * @solid.incidence * (@solid.female_expected_age - 30) / 360
-      @quarenta_female = @err_female * @solid.incidence * (@solid.female_expected_age - 40) / 360
-      @cinquenta_female = @err_female * @solid.incidence * (@solid.female_expected_age - 50) / 360
+      @vinte_male = (0.45 * @solid.dose)*(2.718281**(-0.026*(20 - 25 ))) * @solid.incidence * (@solid.male_expected_age - 20) / 360
+      @trinta_male = (0.45 * @solid.dose)*(2.718281**(-0.026*(30 - 25 ))) * @solid.incidence * (@solid.male_expected_age - 30) / 360
+      @quarenta_male = (0.45 * @solid.dose)*(2.718281**(-0.026*(40 - 25 ))) * @solid.incidence * (@solid.male_expected_age - 40) / 360
+      @cinquenta_male = (0.45 * @solid.dose)*(2.718281**(-0.026*(50 - 25 ))) * @solid.incidence * (@solid.male_expected_age - 50) / 360
+      @vinte_female = (0.77 * @solid.dose)*(2.718281**(-0.026*(20 - 25 ))) * @solid.incidence * (@solid.female_expected_age - 20) / 360
+      @trinta_female = (0.77 * @solid.dose)*(2.718281**(-0.026*(30 - 25 ))) * @solid.incidence * (@solid.female_expected_age - 30) / 360
+      @quarenta_female = (0.77 * @solid.dose)*(2.718281**(-0.026*(40 - 25 ))) * @solid.incidence * (@solid.female_expected_age - 40) / 360
+      @cinquenta_female = (0.77 * @solid.dose)*(2.718281**(-0.026*(50 - 25 ))) * @solid.incidence * (@solid.female_expected_age - 50) / 360
     end
   end
 

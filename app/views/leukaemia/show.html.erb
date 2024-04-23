@@ -5,7 +5,7 @@
   <h2>Risco Relativo (RR) = <%= @rr.round(3) %></h2>
   <h2>Probabilidade de Causa(PC) = <%= @pc.round(2) %>%</h2>
   <hr>
-  <h1>Lost Life Expectancy Rate(em dias)</h1>
+  <h1>Lost Life Expectancy(em dias)</h1>
   <% if @leukaemium.incidence.present? && @leukaemium.male_expected_age.present? && @leukaemium.female_expected_age.present? %>
     <div class="container">
       <div id="projects" class="card-projects">
@@ -15,7 +15,7 @@
             <h4>LLE para o ERR atual</h4>
             <p><%= @lle_male.round %></p>
           </div>
-          <div class="card" >
+<!--           <div class="card" >
             <h4>20 anos</h4>
             <p><%= @vinte_male.round %></p>
           </div>
@@ -30,7 +30,7 @@
           <div class="card" >
             <h4>50 anos</h4>
             <p><%= @cinquenta_male.round %></p>
-          </div>
+          </div>  -->
         </div>
       </div>
       <div id="projects" class="card-projects">
@@ -40,7 +40,7 @@
             <h4>LLE para o ERR atual</h4>
             <p><%= @lle_female.round %></p>
           </div>
-          <div class="card" >
+<!--           <div class="card" >
             <h4>20 anos</h4>
             <p><%= @vinte_female.round %></p>
           </div>
@@ -55,7 +55,7 @@
           <div class="card" >
             <h4>50 anos</h4>
             <p><%= @cinquenta_female.round %></p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -71,7 +71,7 @@
     <h2>40 anos = <%= @quarenta_female.round %>dias</h2>
     <h2>50 anos = <%= @cinquenta_female.round %>dias</h2> -->
   <% end %>
-  <%= link_to 'LLER', edit_leukaemium_path(@leukaemium), class: "btn btn-grad" %>
+  <%= link_to 'LLE', edit_leukaemium_path(@leukaemium), class: "btn btn-grad" %>
 <% end %>
 <hr>
 <%= link_to 'Back', root_path, class: "btn btn-blue" %>
